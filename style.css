@@ -1,0 +1,282 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+/*! base css start */
+* {
+  margin: 0;
+}
+
+body {
+  font-family: "Bebas Neue", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.container {
+  background-color: #141414;
+}
+/*! base css end */
+
+/*! navbar css start */
+
+.navbar {
+  background-color: #141414;
+  height: 60px;
+  color: white;
+  position: sticky;
+  top: 0px;
+}
+
+.navbar_wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+  padding: 0 50px;
+}
+.logo_wrapper {
+  font-size: 25px;
+  color: #e50914;
+  -webkit-text-stroke: 1px #830711;
+}
+
+.menu_container {
+  display: flex;
+  align-items: center;
+}
+
+.menu_list {
+  display: flex;
+  list-style: none;
+  column-gap: 30px;
+  padding: 0;
+}
+.menu_list_item {
+  font-size: 20px;
+  transition: 0.2s;
+}
+.menu_list_item:hover {
+  transform: scale(1.15);
+}
+
+.menu_list a {
+  text-decoration: none;
+  color: white;
+}
+.profile_photo {
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  object-fit: cover;
+}
+.profile_container {
+  display: flex;
+  column-gap: 25px;
+  align-items: center;
+}
+
+.toggle {
+  background-color: white;
+  width: 40px;
+  height: 20px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+.toggle-icon {
+  color: goldenrod;
+  display: flex;
+  align-items: center;
+}
+.toggle_ball {
+  background-color: #141414;
+  border-radius: 50%;
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  right: 1px;
+  align-items: center;
+}
+
+/*! navbar css end */
+
+/*! sidebar css start */
+.sidebar {
+  background-color: #141414;
+  color: white;
+  height: 100vh;
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 60px;
+  row-gap: 40px;
+
+  /*prevent scroll disappear*/
+  position: fixed;
+  top: 0;
+}
+.sidebar i {
+  color: azure;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/*! sidebar css end */
+
+/*? Featured start*/
+.content_wrapper {
+  margin-left: 50px;
+}
+
+.featured_title {
+  width: 50%;
+  height: 45%;
+}
+
+.featured_content {
+  background: url(/img/twd-rick-grimes-4_custom-751d5d37b18fac847a4fb4affb1babe4bcc17e0d.jpeg);
+  padding: 50px;
+  height: calc(100vh - 160px);
+  background-size: 100% 125%;
+  display: flex;
+  flex-direction: column;
+}
+
+.featured_description {
+  background-color: rgb(255, 255, 255, 0.5);
+  width: 500px;
+  padding: 10px;
+  margin: 20px 0;
+  font-size: larger;
+  border-radius: 5px;
+}
+
+.featured_buttons {
+  display: flex;
+  column-gap: 30px;
+}
+.featured_buttons button {
+  padding: 10px 25px;
+  border-radius: 2px;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  column-gap: 10px;
+  font-size: 16px;
+}
+
+#info {
+  background-color: rgb(255, 255, 255, 0.5);
+}
+
+/*? Featured end*/
+
+/*! filter start */
+.movie_list_filter {
+  margin: 20px 0 20px 50px;
+  padding: 20px;
+}
+.movie_list_filter select {
+  background-color: #141414;
+  color: white;
+  padding: 7px 0;
+  width: 125px;
+  border-radius: 5px;
+}
+
+/*! filter end */
+
+/* movie-list start */
+.movie_list_container {
+  margin-left: 70px;
+  color: white;
+}
+
+.movie_list {
+  list-style: none;
+  padding: 0;
+  height: 300px;
+  display: flex;
+  align-items: center;
+  column-gap: 30px;
+  transform: translateX(0);
+  transition: .8s all ease-in-out;
+}
+
+.movie_item_img {
+  width: 270px;
+  height: 200px;
+  object-fit: cover;
+  transition: 0.8s all ease;
+}
+.movie_list_wrapper {
+  overflow: hidden;
+  position: relative;
+}
+.movie_item {
+  position: relative;
+}
+.movie_item:hover .movie_item_title,
+.movie_item:hover .movie_item_buttons {
+  opacity: 1;
+}
+
+.movie_item:hover .movie_item_img {
+  transform: scale(1.2);
+  margin: 0 30px;
+  opacity: 0.5;
+}
+.movie_item_title {
+  background-color: rgb(40, 40, 40, 0.4);
+  padding: 0 10px;
+  font-size: 28px;
+  font-weight: bold;
+  position: absolute;
+  top: 10%;
+  left: 50px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+
+.movie_item_buttons {
+  background-color: rgb(40, 40, 40, 0.4);
+  padding: 10px;
+  font-weight: bold;
+  position: absolute;
+  bottom: 10%;
+  left: 50px;
+  display: flex;
+  column-gap: 20px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+
+.movie_item_buttons i {
+  cursor: pointer;
+  opacity: 0.5;
+  font-size: 20px;
+  transition: 0.5s all ease;
+}
+.movie_item_buttons i:hover {
+  opacity: 1;
+}
+/* movie-list end */
+
+/*! js start */
+.arrow {
+  width: 100px;
+  font-size: 120px;
+  position: absolute;
+  display: flex;
+  right: 0;
+  top: 90px;
+  opacity: 0.4;
+  transition: 0.6s ease;
+  cursor: pointer;
+}
+.arrow:hover {
+  opacity: 1;
+}
+/*! js end */
